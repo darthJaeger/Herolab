@@ -27,14 +27,16 @@
     <tag group="User" tag="Tracker"/>
     <tag group="FeatureTyp" tag="Action"/>
     </thing>
-  <thing id="sr5CAasimarProtec" name="Protector" compset="SubRace" uniqueness="unique">
+  <thing id="sr5CAasimarProtec" name="Protector" description="Aasimar who have received visions, prophecies, or inspiration when confronted with evil are often being guided by a deva or other celestial being. Those who go on to guard the weak, and strike at evil become {i} protectors{/i}, assimar who stand ever vigilant against the darkness.\n\n{b}Ability Score Increase{/b}: Wisdom score increases by 1.\n{b}Radiant Soul{/b}: At third level you have the ability to transform into a vision of light, charged by the powers of good, your eyes gleam with radiant energy as you proudly unfurling your translucent white wings. While transformed  you have a flying speed of 30 feet and deal extra radiant damage." compset="SubRace" uniqueness="unique">
     <fieldval field="rWIS" value="1"/>
     <usesource source="srcVGtM"/>
     <tag group="RaceType" tag="Normal"/>
     <tag group="RaceSize" tag="Medium0"/>
     <tag group="SubRace" tag="r5CAasimar"/>
     <tag group="ClVaryName" tag="Prepend"/>
-    <bootstrap thing="ra5CAasimarRadSou"></bootstrap>
+    <bootstrap thing="ra5CAasimarRadSou">
+      <containerreq phase="First" priority="5000"><![CDATA[count:Classes.? >=3]]></containerreq>
+      </bootstrap>
     </thing>
   <thing id="ra5CAasimarRadSou" name="Radiant Soul" description="Charged by the powers of good, your eyes gleam with radiant energy as you proudly unfurling your translucent white wings. Here you stand vigilant, guarding the weak, striking at evil, and suppressing the ever advancing darkness. You can now harness the latent divine energy stored within your soul. You can choose to reveal your true nature as a standard action.  \n\nThis transformation remains active for a maximum of 10 rounds unless you choose to end it earlier as a bonus action. During that time, you have a flying speed of 30 feet, and once per turn, you can deal extra radiant damage to a single target with either an attack or spell. The extra radiant damage is equal to your current level. \n\nYou can use this ability after each long rest." compset="RaceSpec">
     <fieldval field="trkMax" value="1"/>
@@ -64,11 +66,8 @@ if (hero.childfound[ra5CAasimarRadSou].field[abilActive].value = 1) then
     nexteach
 
 endif]]></eval>
-    <prereq message="">
-      <validate><![CDATA[validif (herofield[tTotLevel].value >= 3)]]></validate>
-      </prereq>
     </thing>
-  <thing id="ra5CAasimarRadCon" name="Radiant Consumption" description="Fed by an intense desire to destroy evil, you can focus  divine energy within your soul into searing light from your eyes and mouth.\n\nThis transformation remains active for a maximum of 10 rounds unless you choose to end it earlier as a bonus action. During that time, you you shed bright light in\na 10-foot radius and dim light for an additional 10 feet, at the end of each turn, every creature within the brightest radius - including you - receive radiant damage equal to half your level (rounded up).\n\nOnce per turn, you can deal extra radiant damage to a single target with either an attack or spell. The extra radiant damage is equal to your current level. \n\nYou can use this ability after each long rest." compset="RaceSpec">
+  <thing id="ra5CAasimarRadCon" name="Radiant Consumption" description="Fed by an intense desire to destroy evil, you can focus  divine energy within your soul into searing light from your eyes and mouth.\n\nThis transformation remains active for a maximum of 10 rounds unless you choose to end it earlier as a bonus action. During that time, you you shed bright light in a 10-foot radius and dim light for an additional 10 feet, at the end of each turn, every creature within the brightest radius - including you - receives radiant damage equal to half your level (rounded up).\n\nOnce per turn, you can deal extra radiant damage to a single target with either an attack or spell. The extra radiant damage is equal to your current level. \n\nYou can use this ability after each long rest." compset="RaceSpec">
     <fieldval field="trkMax" value="1"/>
     <fieldval field="abDuration" value="1"/>
     <fieldval field="actUserMin" value="1"/>
@@ -96,20 +95,19 @@ if (hero.childfound[ra5CAasimarRadCon].field[abilActive].value = 1) then
     nexteach
 
 endif]]></eval>
-    <prereq message="">
-      <validate><![CDATA[validif (herofield[tTotLevel].value >= 3)]]></validate>
-      </prereq>
     </thing>
-  <thing id="sr5CAasimarScourg" name="Scourge" compset="SubRace" uniqueness="unique">
+  <thing id="sr5CAasimarScourg" name="Scourge" description="A few aasimar are so driven by an intense desire to destroy evil, that their divine energy threatens to consumes them and others in the process. These aasimar have the ability to project a searing light from their eyes and mouth that burns everyone within a 10 foot radius. Such aasimar are known as {i}the scourge{/i}. Scourge aasimar have a tendency to withdraw from the world around them, isolating themselves behind masks in an effort to contain their desires, unmasking themselves only in battle." compset="SubRace" uniqueness="unique">
     <fieldval field="rCON" value="1"/>
     <usesource source="srcVGtM"/>
     <tag group="RaceType" tag="Normal"/>
     <tag group="RaceSize" tag="Medium0"/>
     <tag group="SubRace" tag="r5CAasimar"/>
     <tag group="ClVaryName" tag="Prepend"/>
-    <bootstrap thing="ra5CAasimarRadCon"></bootstrap>
+    <bootstrap thing="ra5CAasimarRadCon">
+      <containerreq phase="First" priority="5000"><![CDATA[count:Classes.? >=3]]></containerreq>
+      </bootstrap>
     </thing>
-  <thing id="ra5CAasimarNecrot" name="Necrotic Shroud" description="Charged by the powers of evil, your eyes turn into pools of darkness as you proudly unfurling your  ghostly, flightless skeletal wings. As you transform, all creatures within a 10 foott radius that can see you must succeed on a Charisma saving throw (DC 8 + proficiency bonus +  Charisma modifier) or become frightened until the end of your next turn.\n\nThis transformation remains active for a maximum of 10 rounds unless you choose to end it earlier as a bonus action. Once per turn, you can deal extra necrotic damage to a single target with either an attack or spell. The extra radiant damage is equal to your current level. \n\nYou can use this ability after each long rest." compset="RaceSpec">
+  <thing id="ra5CAasimarNecrot" name="Necrotic Shroud" description="Charged by the powers of evil, your eyes turn into pools of darkness as you proudly unfurling your  ghostly, flightless skeletal wings. As you transform, all creatures within a 10 foott radius that can see you must succeed on a Charisma saving throw (DC 8 + proficiency bonus +  Charisma modifier) or become frightened until the end of your next turn.\n\nThis transformation remains active for a maximum of 10 rounds unless you choose to end it earlier as a bonus action. Once per turn, you can deal extra necrotic damage to a single target with either an attack or spell. The extra necrotic is equal to your current level. \n\nYou can use this ability after each long rest." compset="RaceSpec">
     <fieldval field="trkMax" value="1"/>
     <fieldval field="abDuration" value="1"/>
     <fieldval field="actUserMin" value="1"/>
@@ -138,18 +136,17 @@ if (hero.childfound[ra5CAasimarNecrot].field[abilActive].value = 1) then
     nexteach
 
 endif]]></eval>
-    <prereq message="">
-      <validate><![CDATA[validif (herofield[tTotLevel].value >= 3)]]></validate>
-      </prereq>
     </thing>
-  <thing id="sr5CAasimarFallen" name="Fallen" compset="SubRace" uniqueness="unique">
+  <thing id="sr5CAasimarFallen" name="Fallen" description="Aasimar who are influenced by dark powers as a youth or young adults may become {i}one of the fallen{/i}, assimar whose inner light has been replaced by shadow.\n\n{b}Ability Score Increase{/b}: Strength score increases by 1.\n{b}Necrotic Shroud{/b}: At third level you have the ability to transform into a vision of darkness, charged by the powers of evil, your eyes turn into shadowed pools as you proudly unfurling your ghostly, flightless skeletal wings. Creautures close enough to see this transformation may become frightened until the end of your next turn." compset="SubRace" uniqueness="unique">
     <fieldval field="rSTR" value="1"/>
     <usesource source="srcVGtM"/>
     <tag group="RaceSize" tag="Medium0"/>
     <tag group="SubRace" tag="r5CAasimar"/>
     <tag group="ClVaryName" tag="Prepend"/>
     <tag group="RaceType" tag="Normal"/>
-    <bootstrap thing="ra5CAasimarNecrot"></bootstrap>
+    <bootstrap thing="ra5CAasimarNecrot">
+      <containerreq phase="First" priority="5000"><![CDATA[count:Classes.? >=3]]></containerreq>
+      </bootstrap>
     </thing>
   <thing id="ra5CFirbolgSlpeec" name="Speech of Beast and Leaf" description="You have a limited ability to communicate with fauna  and\nflora. They understand your intentions, although you dont have any ability to understand them. You have advantage on any Charisma check made while attempting to  influence them." compset="RaceSpec">
     <usesource source="srcVGtM"/>
@@ -355,5 +352,110 @@ endif]]></eval>
     <usesource source="srcVGtM"/>
     <tag group="Background" tag="bck5CLizardfolk"/>
     <tag group="Roll" tag="8"/>
+    </thing>
+  <thing id="r5CTabaxi" name="Tabaxi" compset="Race">
+    <fieldval field="rDEX" value="2"/>
+    <fieldval field="rCHA" value="1"/>
+    <fieldval field="rLanguages" value="1"/>
+    <fieldval field="rHeightMin" value="68"/>
+    <fieldval field="rWeightMin" value="90"/>
+    <tag group="ProfSkill" tag="skPercep"/>
+    <tag group="ProfSkill" tag="skStealth"/>
+    <tag group="Alignment" tag="Chaotic"/>
+    <tag group="AlgnReq" tag="Chaotic"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="RaceType" tag="Normal"/>
+    <tag group="HeightDice" tag="1"/>
+    <tag group="HeightSize" tag="12"/>
+    <tag group="WeightMult" tag="4"/>
+    <bootstrap thing="wClaw">
+      <autotag group="AttackTarg" tag="1Target"/>
+      <autotag group="DamTypeOvr" tag="dtSlashing"/>
+      <assignval field="wDieSize" value="4"/>
+      <assignval field="wDieCount" value="1"/>
+      </bootstrap>
+    <bootstrap thing="ra5CTabaxiAgility"></bootstrap>
+    <bootstrap thing="raDarkVis">
+      <autotag group="Value" tag="60"/>
+      </bootstrap>
+    <bootstrap thing="xClimb">
+      <autotag group="Value" tag="20"/>
+      </bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    </thing>
+  <thing id="ra5CTabaxiAgility" name="Feline Agility" description="When you move in combat, your reflexes and agility allow you a burst of speed that doubles the distance you could normally cover. Once used, this trait can not be used again until you spend a subsequent turn without using any movement options." compset="RaceSpec">
+    <fieldval field="trkMax" value="1"/>
+    <usesource source="srcVGtM"/>
+    <tag group="abAction" tag="Move"/>
+    <tag group="User" tag="Tracker"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="Usage" tag="NoMovement" name="/stationary turn"/>
+    <tag group="FeatureTyp" tag="Action"/>
+    </thing>
+  <thing id="ra5CTritonDepth" name="Guardians of the Depths" description="Life in the oceans&apos;s depths has its advantages, you are  resistant to cold damage, and you ignore any disadvantages land walkers suffer in underwater environments." compset="RaceSpec">
+    <usesource source="srcVGtM"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="ra5CTritonMagic" name="Control Air and Water" description="A child of the sea, you can call on the magic of elemental air and water. At 1st level you can cast {i}Fog Cloud{/i}. At 3rd level, you gain access to {i}Gust of Wind{/i}, and at 5th level, you can cast {i}Wall of Water{/i}.\n\nYou can cast one of these spells per long rest using Charisma as your spellcasting ability." compset="RaceSpec">
+    <fieldval field="trkMax" value="1"/>
+    <usesource source="srcVGtM"/>
+    <tag group="User" tag="Tracker"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    <tag group="Usage" tag="LongRest"/>
+    </thing>
+  <thing id="ra5CtritonEmissar" name="Emissary of the Sea" description="You have a limited ability to communicate with water breathing beasts. They understand your intentions, although you dont have any ability to understand them." compset="RaceSpec">
+    <usesource source="srcVGtM"/>
+    <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="r5CTriton" name="Triton" compset="Race">
+    <fieldval field="rSTR" value="1"/>
+    <fieldval field="rCON" value="1"/>
+    <fieldval field="rCHA" value="1"/>
+    <fieldval field="rHeightMin" value="57"/>
+    <fieldval field="rWeightMin" value="88"/>
+    <usesource source="srcVGtM"/>
+    <tag group="DamageRes" tag="dtCold"/>
+    <tag group="RaceSize" tag="Medium0"/>
+    <tag group="RaceType" tag="Normal"/>
+    <tag group="HeightDice" tag="1"/>
+    <tag group="HeightSize" tag="4"/>
+    <tag group="WeightMult" tag="10"/>
+    <tag group="Alignment" tag="Lawful"/>
+    <tag group="Alignment" tag="Good"/>
+    <tag group="AlgnReq" tag="LawGood"/>
+    <tag group="AlgnReq" tag="LawNeut"/>
+    <bootstrap thing="raAmphib"></bootstrap>
+    <bootstrap thing="ra5CTritonMagic"></bootstrap>
+    <bootstrap thing="ra5CtritonEmissar"></bootstrap>
+    <bootstrap thing="ra5CTritonDepth"></bootstrap>
+    <bootstrap thing="xSwim">
+      <autotag group="Value" tag="30"/>
+      </bootstrap>
+    <bootstrap thing="spFogClou">
+      <autotag group="Helper" tag="RaceSpell"/>
+      </bootstrap>
+    <bootstrap thing="spGustWind">
+      <containerreq phase="First" priority="2500"><![CDATA[count:Classes.? >=3]]></containerreq>
+      <autotag group="Helper" tag="RaceSpell"/>
+      </bootstrap>
+    <bootstrap thing="lCommon"></bootstrap>
+    <bootstrap thing="lPrimord"></bootstrap>
+    <bootstrap thing="sp5CWallofWater">
+      <containerreq phase="First" priority="2500"><![CDATA[count:Classes.? >=5]]></containerreq>
+      <autotag group="Helper" tag="RaceSpell"/>
+      </bootstrap>
+    </thing>
+  <thing id="sp5CWallofWater" name="Wall of Water" description="You conjure up a wall of water on the ground at a point you can see within range. You can make the wall up to 30 feet long, 10 feet high, and l foot thick, or you can make a ringed wait up to 20 feet in diameter, 20 feet high, and 1 foot thick~ The wall vanishes when the spell ends. The wall&apos;s space is difficult terrain.\n\nAny ranged weapon attack that enters the wall&apos;s space has disadvantage on the attack roll, and fire damage ishalved if the fire effect passes through the wall to reach its target. Spells that deal cold damage that pass through the wall cause the area of the wan they pass through to freeze solid (at least a 5-foot square section is frt&gt;zen), Each 5-foot•square frozen section has AC 5 and 1 S hit points. Reducing a frozen section to O hit points destroys it. When a section is destroyed, the wall&apos;s water doesn&apos;t fill it." compset="Spell">
+    <fieldval field="sCompDesc" value="a drop of water"/>
+    <fieldval field="sRange" value="60 feet"/>
+    <fieldval field="sDuration" value="Concentration, up to 10 minutes"/>
+    <usesource source="srcVGtM"/>
+    <tag group="sComp" tag="V"/>
+    <tag group="sComp" tag="S"/>
+    <tag group="sComp" tag="M"/>
+    <tag group="sLevel" tag="3"/>
+    <tag group="sCastTime" tag="Action1"/>
+    <tag group="sSchool" tag="Evocation"/>
+    <tag group="sClass" tag="r5CTriton"/>
     </thing>
   </document>
