@@ -309,50 +309,6 @@ endif]]></eval>
     <tag group="Usage" tag="ShortRest"/>
     <tag group="abAction" tag="Bonus"/>
     </thing>
-  <thing id="bck5CLizardfolk" name="Lizardfolk Practicality" compset="Background" uniqueness="unique">
-    <usesource source="srcVGtM"/>
-    <pickreq thing="r5CLizardfolk"/>
-    </thing>
-  <thing id="bt5CLizardWasteNo" name="Waste Not" description="Dont waste food ! Take small meats from fallen enemies. Fingers, toes, ears, all tasty. Easy to carry." compset="BackPerTrt" uniqueness="unique">
-    <usesource source="srcVGtM"/>
-    <tag group="Background" tag="bck5CLizardfolk"/>
-    <tag group="Roll" tag="1"/>
-    </thing>
-  <thing id="bt5CLizardSleep" name="Submerged Slumber" description="I like to sleep deep in the swamp. The water washes away the scent of blood and mud prevents lice getting between my scales." compset="BackPerTrt" uniqueness="unique">
-    <usesource source="srcVGtM"/>
-    <tag group="Background" tag="bck5CLizardfolk"/>
-    <tag group="Roll" tag="2"/>
-    </thing>
-  <thing id="bt5CLizardDeadWei" name="Dead Weight" description="What do I do with your moneys ? I can not eat coins, kill with coloured stones or trap with weak shiny chain !" compset="BackPerTrt" uniqueness="unique">
-    <usesource source="srcVGtM"/>
-    <tag group="Background" tag="bck5CLizardfolk"/>
-    <tag group="Roll" tag="3"/>
-    </thing>
-  <thing id="bt5ClizardMeat" name="Preditor and Prey" description="There are only two types of humaoid; lizardfolk and meat." compset="BackPerTrt" uniqueness="unique">
-    <usesource source="srcVGtM"/>
-    <tag group="Background" tag="bck5CLizardfolk"/>
-    <tag group="Roll" tag="4"/>
-    </thing>
-  <thing id="bt5ClizardLaugh" name="Laughs" description="I have learnt the laugh. It is best to use the laugh when others show emotions." compset="BackPerTrt" uniqueness="unique">
-    <usesource source="srcVGtM"/>
-    <tag group="Background" tag="bck5CLizardfolk"/>
-    <tag group="Roll" tag="5"/>
-    </thing>
-  <thing id="bt5CLizardMetapho" name="Metaphors" description="I am learning the metaphores. Others use them a lot so they must be useful. I will memorise as many as I can and use them to make companions helpful in battle, or others less aggressive." compset="BackPerTrt" uniqueness="unique">
-    <usesource source="srcVGtM"/>
-    <tag group="Background" tag="bck5CLizardfolk"/>
-    <tag group="Roll" tag="6"/>
-    </thing>
-  <thing id="bt5CLizardGifted" name="Gifted Lizardfolk" description="I like humanoid with shiny scales and sharp swords, they want to be good hunters like lizardfolk." compset="BackPerTrt" uniqueness="unique">
-    <usesource source="srcVGtM"/>
-    <tag group="Background" tag="bck5CLizardfolk"/>
-    <tag group="Roll" tag="7"/>
-    </thing>
-  <thing id="bt5ClizardFood" name="Fresh Food" description="I like to eat my prey while it&apos;s still wriggling." compset="BackPerTrt" uniqueness="unique">
-    <usesource source="srcVGtM"/>
-    <tag group="Background" tag="bck5CLizardfolk"/>
-    <tag group="Roll" tag="8"/>
-    </thing>
   <thing id="r5CTabaxi" name="Tabaxi" compset="Race">
     <fieldval field="rDEX" value="2"/>
     <fieldval field="rCHA" value="1"/>
